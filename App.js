@@ -7,17 +7,9 @@ export default function App() {
   const [initialState, setInitialState] = useState([1, 2, 3, 4, 5, 6, 7, 8, 0]);
   const [solution, setSolution] = useState([]);
   const [currentStep, setCurrentStep] = useState(0);
-  const [imageUrl, setImageUrl] = useState('./assets/aodai.jpg'); // URL của bức ảnh mặc định
+  const [imageUrl, setImageUrl] = useState('./assets/meo.jpg'); // URL của bức ảnh mặc định
   const [isModalVisible, setIsModalVisible] = useState(false); // Trạng thái hiển thị modal
 
-  const imageOptions = {
-    cat: require('./assets/meo.jpg'),
-    khang: require('./assets/khang.jpg'),
-    son: require('./assets/son.jpg'),
-    aodai: require('./assets/aodai.jpg'),
-    vietnam: require('./assets/vietnam.png'),
-    halong: require('./assets/vinhhalong.jpg'),
-  }; // Các URL của các hình ảnh
 
   // Tốc độ giải đố
   const speedLevels = [1000, 500, 200, 100];
@@ -214,22 +206,22 @@ export default function App() {
         <View style={styles.modalContainer}>
           <Text style={styles.modalTitle}>Chọn hình ảnh</Text>
           <View style={styles.imageGrid}>
-              <TouchableOpacity onPress={() => handleImageSelect('cat')}>
+              <TouchableOpacity onPress={() => setImageUrl('./assets/meo.jpg')}>
                 <Image source={require('./assets/meo.jpg')} style={styles.imageOption} />
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => handleImageSelect('khang')}>
+              <TouchableOpacity onPress={() => setImageUrl('./assets/khang.jpg')}>
                 <Image source={require('./assets/khang.jpg')} style={styles.imageOption} />
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => handleImageSelect('son')}>
+              <TouchableOpacity onPress={() => setImageUrl('./assets/son.jpg')}>
                 <Image source={require('./assets/son.jpg')} style={styles.imageOption} />
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => handleImageSelect('aodai')}>
+              <TouchableOpacity onPress={() => setImageUrl('./assets/aodai.jpg')}>
                 <Image source={require('./assets/aodai.jpg')} style={styles.imageOption} />
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => handleImageSelect('vietnam')}>
+              <TouchableOpacity onPress={() => setImageUrl('./assets/vietnam.png')}>
                 <Image source={require('./assets/vietnam.png')} style={styles.imageOption} />
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => handleImageSelect('halong')}>
+              <TouchableOpacity onPress={() => setImageUrl('./assets/vinhhalong.jpg')}>
                 <Image source={require('./assets/vinhhalong.jpg')} style={styles.imageOption} />
               </TouchableOpacity>
           </View>
